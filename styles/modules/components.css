@@ -1,0 +1,291 @@
+/* === HEADER COMPONENTS === */
+.slide-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    margin-bottom: 4vh;
+    position: relative;
+    z-index: 2;
+    gap: 20px; 
+}
+
+.slide-title { flex: 1; }
+
+.slide-title h1 {
+    font-size: clamp(24px, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0 0 10px 0;
+    color: var(--text-main);
+}
+
+.slide-logo { flex-shrink: 0; }
+
+.logo-svg {
+    height: clamp(30px, 5vw, 50px);
+    width: auto;
+    display: block;
+}
+
+.slide-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accent-line {
+    width: 5px;
+    height: 100%;
+    min-height: 2.5em;
+    background: var(--accent-gradient);
+    background-size: 400% 400%;
+    animation: gradient-shift 5s ease infinite;
+    border-radius: 4px;
+}
+
+.slide-subtitle h2 {
+    font-size: clamp(14px, 1.5vw, 1.2rem);
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* === UI CONTROLS (Кнопки) === */
+
+/* Общий стиль кнопки */
+.ui-btn {
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-secondary);
+    box-shadow: var(--surface-shadow);
+    transition: all 0.3s ease;
+    /* Убираем opacity у самой кнопки, управляем через контейнер */
+}
+
+.ui-btn:hover {
+    color: var(--accent-primary);
+    transform: scale(1.1);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 15px var(--accent-primary);
+}
+
+/* Левая группа (Инструменты: Тема, Печать) */
+.ui-controls-left {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 12px;
+    padding: 10px; /* Увеличиваем область наведения */
+    
+    /* DESKTOP: Скрыто по умолчанию */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Показываем при наведении мыши на область кнопок */
+.ui-controls-left:hover {
+    opacity: 1;
+}
+
+/* Правая группа (Навигация: Назад, Вперед) */
+.ui-controls-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 12px;
+    padding: 10px; /* Увеличиваем область наведения */
+    
+    /* DESKTOP: Скрыто по умолчанию */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ui-controls-right:hover {
+    opacity: 1;
+}
+
+
+/* === CARD COMPONENT === */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    height: 100%;
+    align-content: start;
+    flex-grow: 1;
+}
+
+.card {
+    background: var(--surface-bg);
+    border: var(--surface-border);
+    border-radius: var(--surface-radius);
+    backdrop-filter: var(--surface-blur);
+    box-shadow: var(--surface-shadow);
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.card-icon {
+    height: 80px; 
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-svg {
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(0 0 8px var(--accent-secondary));
+    animation: icon-float 6s ease-in-out infinite;
+}
+
+.card h3 {
+    color: var(--accent-secondary);
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* === FOOTER COMPONENT === */
+.slide-footer {
+    margin-top: auto;
+    padding-top: 20px; 
+}
+
+.thought-bubble {
+    background: var(--surface-bg);
+    border: var(--surface-border);
+    border-radius: 20px;
+    padding: var(--footer-padding);
+    display: flex;
+    align-items: center;
+    gap: 0; 
+    backdrop-filter: var(--surface-blur);
+    width: 100%;
+}
+
+.footer-icon-svg {
+    width: 48px;
+    height: 48px;
+    min-width: 48px; 
+    margin-right: 25px; 
+    filter: drop-shadow(0 0 5px var(--accent-primary));
+    animation: icon-float 5s ease-in-out infinite;
+}
+
+.thought-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.thought-text span {
+    background: var(--accent-gradient);
+    background-size: 400% 400%;
+    animation: gradient-shift 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+/* === SECTION SLIDE TYPE (ВОССТАНОВЛЕНО) === */
+
+/* Модификатор лайаута для центрирования */
+.slide-layout.section-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.section-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Карточка раздела (Центральная плашка) */
+.section-card {
+    background: var(--surface-bg);
+    border: var(--surface-border);
+    border-radius: var(--surface-radius);
+    backdrop-filter: var(--surface-blur);
+    box-shadow: var(--surface-shadow);
+    
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: clamp(40px, 6vh, 80px);
+}
+
+.section-card h1 {
+    font-size: clamp(32px, 5vw, 4rem); 
+    margin: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--text-main);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.page-number {
+    text-align: right;
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* === MOBILE ADAPTATION === */
+@media (max-width: 900px) {
+    /* 1. Левая группа (Тема) */
+    .ui-controls-left {
+        opacity: 1; /* Всегда видна */
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    /* Скрываем кнопку экспорта на мобильном */
+    #export-btn {
+        display: none !important;
+    }
+
+    /* 2. Правая группа (Навигация) */
+    .ui-controls-right {
+        opacity: 1; /* Всегда видна */
+        bottom: 20px; 
+        right: 20px;
+    }
+    
+    /* Увеличим кнопки для удобства */
+    .ui-btn {
+        width: 50px;
+        height: 50px;
+    }
+}

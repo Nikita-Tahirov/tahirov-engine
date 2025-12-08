@@ -1,0 +1,84 @@
+/* Импорт токенов */
+@import url('./tokens/theme-glass.css');
+@import url('./tokens/theme-material.css');
+@import url('./tokens/theme-print.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    
+    transition: background 0.3s ease, color 0.3s ease;
+    
+    /* === ИЗМЕНЕНИЕ: АДАПТИВНАЯ ВЫСОТА === */
+    /* Было: height: 100dvh; overflow: hidden; */
+    /* Стало: */
+    min-height: 100dvh; /* Занимает минимум весь экран */
+    width: 100vw;
+    overflow-x: hidden; /* Горизонтальный скролл запрещен */
+    overflow-y: auto;   /* Вертикальный скролл разрешен, если контент выше экрана */
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === ФОНОВЫЕ ПЯТНА === */
+body::before, body::after {
+    content: '';
+    position: fixed; 
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(100px);
+    
+    opacity: var(--blob-opacity, 0.12); 
+    z-index: -1;
+    animation: float 25s infinite alternate ease-in-out;
+}
+
+body::before { 
+    background: var(--blob-color-1, #8a00d4); 
+    top: -20%; 
+    left: -10%; 
+}
+
+body::after { 
+    background: var(--blob-color-2, #0044ff); 
+    bottom: -20%; 
+    right: -10%; 
+    animation-delay: -10s; 
+}
+
+/* Глобальные анимации */
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(5%, 5%) scale(1.1); }
+}
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-head);
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+    line-height: 1.6;
+}

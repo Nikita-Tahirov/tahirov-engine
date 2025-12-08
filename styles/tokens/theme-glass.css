@@ -1,0 +1,35 @@
+/* === THEME: GLASS (Dark / Cyberpunk) === */
+.theme-glass {
+    /* Цветовая палитра */
+    --bg-color: #05020a;
+    --bg-image: radial-gradient(circle at 50% 0%, #1a0b2e 0%, #05020a 80%);
+    
+    --text-main: #ffffff;
+    --text-secondary: #c0bdd0;
+    
+    --accent-primary: #d50085; 
+    --accent-secondary: #0099ff; 
+    --accent-gradient: linear-gradient(270deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+
+    --logo-color: #B4C8FF; 
+
+    /* Типографика */
+    --font-head: 'Unbounded', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+
+    /* Эффекты стекла */
+    --surface-bg: linear-gradient(145deg, rgba(30, 20, 50, 0.4), rgba(10, 5, 20, 0.6));
+    --surface-border: 1px solid rgba(255, 255, 255, 0.08);
+    --surface-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
+    --surface-blur: blur(20px);
+    --surface-radius: 24px;
+
+    /* Декорации (НЕОНОВЫЕ ПЯТНА) */
+    --blob-opacity: 0.12;
+    --blob-color-1: #8a00d4; /* Фиолетовый */
+    --blob-color-2: #0044ff; /* Синий */
+
+    /* Отступы */
+    --card-padding: clamp(30px, 4vh, 50px);
+    --footer-padding: 25px 40px;
+}

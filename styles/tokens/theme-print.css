@@ -1,0 +1,100 @@
+/* === THEME: PRINT (PDF Generation / Paper) === */
+
+@page {
+    size: A4 landscape; 
+    margin: 0; 
+}
+
+@media print {
+    :root {
+        --bg-color: #FFFFFF !important;
+        --bg-image: none !important;
+        
+        --text-main: #000000 !important;
+        --text-secondary: #333333 !important;
+        
+        --accent-primary: #000000 !important;
+        --accent-secondary: #000000 !important;
+        --accent-gradient: none !important; 
+        
+        --surface-bg: #FFFFFF !important;
+        --surface-border: 1px solid #000000 !important;
+        --surface-shadow: none !important;
+        --surface-blur: none !important;
+        --surface-radius: 0 !important; 
+        
+        --card-padding: 20px !important;
+        
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Скрываем элементы управления (новые классы) */
+    .ui-controls-left,
+    .ui-controls-right,
+    .slide-footer, 
+    .ui-btn { 
+        display: none !important;
+    }
+
+    body::before, body::after {
+        display: none !important;
+    }
+
+    html, body, .container, .slide-layout {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: white !important;
+        display: block !important;
+    }
+
+    #app {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slide-layout {
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        padding: 10mm !important;
+        margin: 0 !important;
+        
+        break-after: always;
+        page-break-after: always;
+        
+        animation: none !important;
+        opacity: 1 !important;
+        
+        zoom: 0.65; 
+    }
+
+    .card {
+        break-inside: avoid; 
+        box-shadow: none !important;
+        border: 1px solid #ccc !important; 
+    }
+    
+    .card-icon {
+        height: 60px !important; 
+        margin-bottom: 10px !important;
+    }
+    
+    h1 {
+        font-size: 24pt !important;
+        color: #000 !important;
+    }
+    
+    h2, h3 {
+        color: #000 !important;
+    }
+    
+    p {
+        font-size: 11pt !important;
+        color: #000 !important;
+    }
+}
