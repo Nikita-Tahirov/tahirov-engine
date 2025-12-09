@@ -10,6 +10,17 @@ export const presentationData = {
 
     // Массив слайдов
     slides: [
+                // Титульный слайд
+        {
+            id: "slide-title",
+            type: "title",
+            presentationTitle: "Эволюция источников знания",
+            speakerName: "Никита Тахиров",
+            speakerTitle: "CEO & Founder",
+            speakerDescription: "Разработчик, спикер, автор статей о технологиях и образовании",
+            logo: true
+        },
+
         // Слайд 1: Титул раздела
         {
             id: "slide-section-1",
@@ -49,4 +60,5 @@ export const presentationData = {
             }
         }
     ]
+
 };
