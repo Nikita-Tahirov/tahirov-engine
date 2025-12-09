@@ -15,7 +15,7 @@ export function TitleSlide(data) {
 
     // Блок с информацией о спикере
     const speakerHtml = `
-        <div class="speaker-block">
+        <div class="speaker-info">
             <h2 class="speaker-name">${speakerName}</h2>
             ${speakerTitle ? `<p class="speaker-title">${speakerTitle}</p>` : ''}
             ${speakerDescription ? `<p class="speaker-description">${speakerDescription}</p>` : ''}
@@ -24,14 +24,22 @@ export function TitleSlide(data) {
 
     return `
         <div class="slide-layout title-mode">
+            <div class="title-background"></div>
+            
             <div class="title-container">
-                ${logoHtml}
+                <div class="title-top">
+                    ${logoHtml}
+                </div>
                 
-                <h1 class="presentation-title">${presentationTitle}</h1>
+                <div class="title-content">
+                    <h1 class="presentation-title">${presentationTitle}</h1>
+                    
+                    <div class="title-divider"></div>
+                    
+                    ${speakerHtml}
+                </div>
                 
-                <div class="title-divider"></div>
-                
-                ${speakerHtml}
+                <div class="title-accent"></div>
             </div>
         </div>
     `;
