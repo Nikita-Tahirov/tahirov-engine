@@ -16,9 +16,8 @@ export const presentationData = {
             type: "title",
             presentationTitle: "Эволюция источников знания",
             speakerName: "Никита Тахиров",
-            speakerTitle: "CEO & Founder",
-            speakerDescription: "Разработчик, спикер, автор статей о технологиях и образовании",
-            logo: true
+speakerTitle: "Руководитель проектов ООО \"1Т\"",
+speakerDescription: "Проектный руководитель, развитие път тем",
         },
 
         // Слайд 1: Титул раздела
@@ -62,3 +61,4 @@ export const presentationData = {
     ]
 
 };
+
