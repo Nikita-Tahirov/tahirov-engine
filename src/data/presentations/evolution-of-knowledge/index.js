@@ -8,6 +8,17 @@ export const presentationData = {
     },
 
     slides: [
+                // Титульный слайд
+        {
+            id: "slide-title",
+            type: "title",
+            presentationTitle: "Эволюция источников знания",
+            speakerName: "Никита Тахиров",
+            speakerTitle: "Руководитель проектов ООО \"1Т\"",
+            speakerDescription: "Проектный руководитель, развитие пэ",
+            logo: true
+        },
+
         {
             id: "slide-section-1",
             type: "section",
@@ -45,3 +56,4 @@ export const presentationData = {
         }
     ]
 };
+
