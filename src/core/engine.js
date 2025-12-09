@@ -7,6 +7,7 @@ import { PresentationLoader } from './PresentationLoader.js';
 import { LibraryScreen } from '../ui/LibraryScreen.js';
 import { CardsSlide } from '../templates/slides/CardsSlide.js';
 import { SectionSlide } from '../templates/slides/SectionSlide.js';
+import { TitleSlide } from '../templates/slides/TitleSlide.js';
 
 class Engine {
     constructor() {
@@ -214,6 +215,7 @@ class Engine {
 
     generateSlideHtml(slideData) {
         switch (slideData.type) {
+                            case 'title': return TitleSlide(slideData);
             case 'cards': return CardsSlide(slideData);
             case 'section': return SectionSlide(slideData);
             case 'cover': return `<h1>${slideData.title}</h1>`;
